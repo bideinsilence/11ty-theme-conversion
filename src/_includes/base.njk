@@ -36,9 +36,10 @@
                     <div class="col-6 col-sm-9 nav-column clearfix">
                         <div class="right-nav">
                             <div class="header-social">
-                                <a href="#" class="fa fa-facebook"></a>
-                                <a href="#" class="fa fa-twitter"></a>
-                                <a href="#" class="fa fa-github"></a>
+                                {% for social in settings.socials %}
+                                    <a href="{{ social.url }}" class="fa fa-{{
+                                    social.name }}"></a>
+                                {% endfor %}
                             </div>
                         </div>
                         <nav id="menu" class="d-none d-lg-block">
@@ -139,7 +140,7 @@
                     <div class="inner">
                         <h4>Address</h4>
                         <h5>Flat Pro, Inc.</h5>
-                        <p>649 Folsom Ave, Suite 400 <br>San Francisco, CA 63105 <br>P: (123) 456-7890</p>
+                        <p>{{ settings.address }}<br>P: {{ settings. phone }}</p>
                         <h4>Newsletter</h4>
                         <form action="#" class="nw_form">
                             <input placeholder="Enter your email" type="email">
