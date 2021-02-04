@@ -192,34 +192,15 @@
   <div class="brand-area">
     <div class="container">
         <div class="row">
+        {% for brand in collections.brands %}
             <div class="col-md-3 col-6 single-brand">
                 <div class="inner">
-                    <a href="#">
-                        <img src="/assets/img/brand1.png" alt="">
+                  <a href="{{ brand.data.url }}">
+                    <img src="{{ brand.data.image }}" alt="{{ brand.data.name }}">
                     </a>
                 </div>
             </div>
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="/assets/img/brand2.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="/assets/img/brand3.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 single-brand">
-                <div class="inner">
-                    <a href="#">
-                        <img src="/assets/img/brand4.png" alt="">
-                    </a>
-                </div>
-            </div>
+        {% endfor %}
         </div>
     </div>
   </div>
