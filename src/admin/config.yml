@@ -4,17 +4,17 @@ backend:
 
 
 collections:
-    - name: "blog"
+    - name: "posts"
         label: "Blog"
         folder: "src/posts"
         create: true
-        slug: "{{ slug }}"
+        slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
         fields:
             - {
-              label: "Title",
-              name: "title",
-              widget: "string"
-            }
+                label: "Title",
+                name: "title",
+                widget: "string"
+              }
             - { label: "Publish Date", name: "date", widget: "datetime" }
             - { label: "Post Body", name: "body", widget: "markdown" }
             # A hidden field to force a the default template.
@@ -24,7 +24,7 @@ collections:
         files:
             - label: "Homepage"
               name: "homepage"
-              file: "index.html"
+              file: "src/index.md"
               fields:
                   - { label: "Layout", name: "layout", widget: "hidden", default:  "_includes/_layouts/homepage.njk" }
                   - { label: "Title", name: "title", widget: "string" }
@@ -36,4 +36,5 @@ collections:
                   - { label: "Site Name", name: "siteName", widget: "string" }
                   - { label: "Logo", name: "logo", widget: "image", required: false }
 
-media_folder: "images" # Media files will be stored in the repo
+
+media_folder: "/images" # Media files will be stored in the repo

@@ -17,6 +17,9 @@ module.exports = function(eleventyConfig) {
     // Copy NetlifyCMS config to /_site/admin
     eleventyConfig.addPassthroughCopy("./src/admin/config.yml");
 
+    // Copy user images folder to /_site/images
+    eleventyConfig.addPassthroughCopy("./src/images");
+
     eleventyConfig.addFilter('dateIso', date => {
         return moment(date).toISOString();
     });
