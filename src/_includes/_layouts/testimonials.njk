@@ -1,11 +1,10 @@
 {% extends "_layouts/simple.njk" %}
 
 {% block postcontent %}
-
 <div class="spt">
-  <div class="testimonial-area spb">
-    <div class="container">
-        <div class="testimonial-slider bordered">
+    <div class="testimonial-area spb">
+        <div class="container">
+            <div class="testimonial-slider bordered">
             {% for testimonial in collections.testimonials %}
                 <div class="single-slide">
                     <div class="inner">
@@ -22,9 +21,8 @@
                     </div>
                 </div>
             {% endfor %}
+            </div>
         </div>
     </div>
-  </div>
 </div>
-
 {% endblock postcontent%}

@@ -8,12 +8,12 @@ banners:
       link:
           url: "/about"
           text: "Learn More"
-    - headline: "Headline goes here"
-      description: "lorm ipsum dolor amet sum"
-      background: "/assets/img/slide1.jpg"
+    - headline: "Headline 2 goes here"
+      description: "more lorm ipsum dolor amet sum"
+      background: "/assets/img/slide2.jpg"
       link:
           url: "/about"
-          text: "Learn More"
+          text: "Who we are"
 
 about:
     title: "USA’s most trusted 3D and graphic designing studio, a very

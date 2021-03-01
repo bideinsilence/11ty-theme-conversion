@@ -2,5 +2,4 @@
 {
     "layout": "_layouts/simple.njk",
     "tags": "testimonials"
-
 }

@@ -1,0 +1,9 @@
+---
+layout: "_layouts/simple.njk"
+---
+<article>
+    <h2>
+        <time datetime="{{ date | dateIso }}">{{ date | dateReadable }}</time>
+    </h2>
+    {{ content | safe }}
+</article>

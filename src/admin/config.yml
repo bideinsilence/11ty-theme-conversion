@@ -1,0 +1,39 @@
+backend:
+    name: git-gateway
+    branch: master # Branch to update (optional; defaults to master)
+
+
+collections:
+    - name: "blog"
+        label: "Blog"
+        folder: "src/posts"
+        create: true
+        slug: "{{ slug }}"
+        fields:
+            - {
+              label: "Title",
+              name: "title",
+              widget: "string"
+            }
+            - { label: "Publish Date", name: "date", widget: "datetime" }
+            - { label: "Post Body", name: "body", widget: "markdown" }
+            # A hidden field to force a the default template.
+            # - { label: "hidden", name: "layout", widget: "hidden", default: "/_includes/_layouts/default-posts.njk" }
+    - name: "pages"
+        label: "Pages"
+        files:
+            - label: "Homepage"
+              name: "homepage"
+              file: "index.html"
+              fields:
+                  - { label: "Layout", name: "layout", widget: "hidden", default:  "_includes/_layouts/homepage.njk" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "About Text", name: "about", widget: "text" } 
+            - label: "Site Settings"
+              name: "settings"
+              file: "_data/settings.json"
+              fields:
+                  - { label: "Site Name", name: "siteName", widget: "string" }
+                  - { label: "Logo", name: "logo", widget: "image", required: false }
+
+media_folder: "images" # Media files will be stored in the repo

@@ -1,0 +1,28 @@
+---
+layout: "_layouts/simple.njk"
+title: "Blog"
+description: "Description"
+backgroundImage: "/assets/img/page-title.jpg"
+eleventyExcludeFromCollections: "true"
+pagination:
+  data: "collections.post"
+  size: "10"
+  reverse: "true"
+  alias: "posts"
+---
+
+<h1>Please check out our blog!</h1>
+<br>
+
+{% for post in posts %}
+<article>
+    <h3>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+    </h3>
+    <time datetime="{{ post.date | dateIso }}">{{ post.date | dateReadable}}</time>
+ 
+    {% excerpt post %}
+  
+    <a href="{{ post.url | url }}" aria-label="Read more on {{ post.data.title }}">Read more</a>
+</article>
+{% endfor %}
