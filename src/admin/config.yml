@@ -2,9 +2,6 @@ backend:
     name: git-gateway
     branch: master # Branch to update (optional; defaults to master)
 
-# when using the default proxy server port
-local_backend: true
-
 collections:
   - name: "posts"
     label: "Blog"
@@ -12,8 +9,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - label: "Title",
-        name: "title",
+      - label: "Title"
+        name: "title"
         widget: "string"
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Post Body", name: "body", widget: "markdown" }
@@ -35,6 +32,5 @@ collections:
         fields:
           - { label: "Site Name", name: "siteName", widget: "string" }
           - { label: "Logo", name: "logo", widget: "image", required: false }
-
 
 media_folder: "/images" # Media files will be stored in the repo
