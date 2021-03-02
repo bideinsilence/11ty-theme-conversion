@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/slicknav.css">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -185,7 +186,17 @@
     <script src="/assets/js/vendor/loopcounter.js"></script>
     <script src="/assets/js/vendor/slicknav.min.js"></script>
     <script src="/assets/js/active.js"></script>
-    
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>       
 </body>
 
 </html>
